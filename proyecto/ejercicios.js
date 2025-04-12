@@ -40,8 +40,8 @@ function eliminarDuplicados(arr) {
     
     
     
-    //ejercicio 4
-    const valores = [12, 5, 8, 130, 44];
+//ejercicio 4
+const valores = [12, 5, 8, 130, 44];
     
     let mayor = valores[0];
     let menor = valores[0];
@@ -63,8 +63,8 @@ function eliminarDuplicados(arr) {
     
     
 
-    //ejercicio 5
-    function esPalindromo(texto) {
+//ejercicio 5
+function esPalindromo(texto) {
     const limpio = texto.replace(/\s/g, '').toLowerCase();
     let invertido = '';
     
@@ -79,3 +79,74 @@ function eliminarDuplicados(arr) {
     console.log(esPalindromo(palabra)); 
     
     
+
+//ejercicio 6
+const nums = [12, 35, 1, 10, 34, 1];
+
+let max = -Infinity;
+let segundo = -Infinity;
+
+for (let i = 0; i < nums.length; i++) {
+const actual = nums[i];
+
+if (actual > max) {
+segundo = max;
+max = actual;
+} else if (actual > segundo && actual < max) {
+segundo = actual;
+}
+}
+
+console.log(segundo);
+
+
+
+//ejercicio 7
+const str = "nombre:Ivan, edad: 23, ciudad:CDMX";
+
+const partes = str.split(',');
+const resultado = {};
+
+for (let i = 0; i < partes.length; i++) {
+const entrada = partes[i].split(':');
+const clave = entrada[0].trim();
+const valor = entrada[1].trim();
+resultado[clave] = isNaN(valor) ? valor : Number(valor);
+}
+
+console.log(resultado);
+
+
+//ejercicio 8
+const mezcla = [120, "Hello", false, 42, "", undefined, "JS"];
+
+const filtrado = [];
+
+for (let i = 0; i < mezcla.length; i++) {
+if (mezcla[i]) {
+filtrado.push(mezcla[i]);
+}
+}
+
+console.log(filtrado);
+
+
+
+//ejercicio 9
+const usuarios = [
+{ nombre: "Ana", edad: 17 },
+{ nombre: "Luis", edad: 22 },
+{ nombre: "Carlos", edad: 15 },
+{ nombre: "Lucía", edad: 30 }
+];
+
+const mayores = [];
+
+for (let i = 0; i < usuarios.length; i++) {
+if (usuarios[i].edad >= 18) {
+mayores.push(usuarios[i]);
+}
+}
+
+console.log(mayores);
+
